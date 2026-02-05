@@ -100,16 +100,16 @@ function LineCard({ line }: { line: ProductionLine }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="ella-card p-4"
+      className="ella-card p-4 overflow-hidden"
     >
-      <div className="flex items-start justify-between mb-3">
-        <div>
-          <h3 className="font-semibold">{line.name}</h3>
+      <div className="flex items-start justify-between mb-3 gap-2">
+        <div className="min-w-0">
+          <h3 className="font-semibold truncate">{line.name}</h3>
           <StatusBadge status={line.status} />
         </div>
         {line.status === "running" && (
-          <div className="text-right">
-            <span className="text-2xl font-bold">{line.oee.toFixed(1)}%</span>
+          <div className="text-right flex-shrink-0">
+            <span className="text-xl sm:text-2xl font-bold">{line.oee.toFixed(1)}%</span>
             <p className="text-xs text-[#6b6b80]">OEE</p>
           </div>
         )}
@@ -117,13 +117,13 @@ function LineCard({ line }: { line: ProductionLine }) {
 
       {line.status === "running" ? (
         <>
-          <div className="flex items-center gap-2 text-sm text-[#6b6b80] mb-3">
-            <Box className="w-4 h-4" />
-            <span>{line.product}</span>
+          <div className="flex items-center gap-2 text-sm text-[#6b6b80] mb-3 min-w-0">
+            <Box className="w-4 h-4 flex-shrink-0" />
+            <span className="truncate">{line.product}</span>
           </div>
-          <div className="flex items-center gap-2 text-sm text-[#6b6b80] mb-4">
-            <User className="w-4 h-4" />
-            <span>Operator: {line.operator}</span>
+          <div className="flex items-center gap-2 text-sm text-[#6b6b80] mb-4 min-w-0">
+            <User className="w-4 h-4 flex-shrink-0" />
+            <span className="truncate">Operator: {line.operator}</span>
           </div>
 
           <div className="space-y-2">
@@ -180,7 +180,7 @@ export default function EllaPage() {
               </div>
               <div>
                 <h1 className="text-xl font-bold">Project BELLA</h1>
-                <p className="text-sm text-[#6b6b80]">Business Enabled Line-Level Assistant</p>
+                <p className="text-sm text-[#6b6b80]">Batch &amp; Equipment Line-Level Assistant</p>
               </div>
             </div>
 
@@ -215,10 +215,10 @@ export default function EllaPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => setSelectedEquipment(eq.id)}
-                className={`equipment-box ${eq.status} px-4 py-3 cursor-pointer`}
+                className={`equipment-box ${eq.status} px-3 sm:px-4 py-3 cursor-pointer overflow-hidden`}
               >
                 <div className="text-center">
-                  <p className="font-medium text-sm">{eq.name}</p>
+                  <p className="font-medium text-xs sm:text-sm truncate">{eq.name}</p>
                   <StatusBadge status={eq.status} />
                 </div>
               </motion.div>

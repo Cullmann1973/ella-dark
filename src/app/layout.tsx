@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Project ELLA | Enterprise Line-Level Assistant",
+  title: "Project BELLA | Batch & Equipment Line-Level Assistant",
   description: "Real-time manufacturing intelligence dashboard for production line monitoring",
 };
 
