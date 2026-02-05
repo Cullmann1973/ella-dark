@@ -179,8 +179,8 @@ export default function EllaPage() {
                 <Factory className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold">Project ELLA</h1>
-                <p className="text-sm text-[#6b6b80]">Enterprise Line-Level Assistant</p>
+                <h1 className="text-xl font-bold">Project BELLA</h1>
+                <p className="text-sm text-[#6b6b80]">Business Enabled Line-Level Assistant</p>
               </div>
             </div>
 
@@ -248,13 +248,13 @@ export default function EllaPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="ella-card p-4"
+            className="ella-card p-4 overflow-hidden"
           >
             <p className="text-sm text-[#6b6b80]">Plant OEE</p>
-            <div className="flex items-end gap-2 mt-1">
-              <span className="text-3xl font-bold">{overviewStats.plantOee}%</span>
-              <span className="text-sm text-green-400 flex items-center gap-1 mb-1">
-                <TrendingUp className="w-4 h-4" />
+            <div className="flex flex-wrap items-end gap-x-2 mt-1">
+              <span className="text-2xl sm:text-3xl font-bold">{overviewStats.plantOee}%</span>
+              <span className="text-xs sm:text-sm text-green-400 flex items-center gap-1 mb-1">
+                <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
                 +{overviewStats.oeeChange}%
               </span>
             </div>
@@ -265,11 +265,11 @@ export default function EllaPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="ella-card p-4"
+            className="ella-card p-4 overflow-hidden"
           >
             <p className="text-sm text-[#6b6b80]">Lines Running</p>
             <div className="flex items-end gap-1 mt-1">
-              <span className="text-3xl font-bold">{overviewStats.linesRunning}</span>
+              <span className="text-2xl sm:text-3xl font-bold">{overviewStats.linesRunning}</span>
               <span className="text-lg text-[#6b6b80] mb-0.5">/ {overviewStats.totalLines}</span>
             </div>
           </motion.div>
@@ -278,13 +278,13 @@ export default function EllaPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="ella-card p-4"
+            className="ella-card p-4 overflow-hidden"
           >
             <p className="text-sm text-[#6b6b80]">Units Today</p>
-            <div className="flex items-end gap-2 mt-1">
-              <span className="text-3xl font-bold">{overviewStats.unitsToday.toLocaleString()}</span>
-              <span className="text-sm text-green-400 flex items-center gap-1 mb-1">
-                <TrendingUp className="w-4 h-4" />
+            <div className="flex flex-wrap items-end gap-x-2 mt-1">
+              <span className="text-2xl sm:text-3xl font-bold">{overviewStats.unitsToday.toLocaleString()}</span>
+              <span className="text-xs sm:text-sm text-green-400 flex items-center gap-1 mb-1">
+                <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
                 +{overviewStats.unitsChange}%
               </span>
             </div>
@@ -295,13 +295,13 @@ export default function EllaPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="ella-card p-4"
+            className="ella-card p-4 overflow-hidden"
           >
             <p className="text-sm text-[#6b6b80]">Quality Rate</p>
-            <div className="flex items-end gap-2 mt-1">
-              <span className="text-3xl font-bold">{overviewStats.qualityRate}%</span>
-              <span className="text-sm text-green-400 flex items-center gap-1 mb-1">
-                <TrendingUp className="w-4 h-4" />
+            <div className="flex flex-wrap items-end gap-x-2 mt-1">
+              <span className="text-2xl sm:text-3xl font-bold">{overviewStats.qualityRate}%</span>
+              <span className="text-xs sm:text-sm text-green-400 flex items-center gap-1 mb-1">
+                <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4" />
                 +{overviewStats.qualityChange}%
               </span>
             </div>
@@ -396,7 +396,7 @@ export default function EllaPage() {
 
       {/* Footer */}
       <footer className="border-t border-[#1e1e2a] mt-16 py-6 text-center text-[#6b6b80] text-sm">
-        <p>Chris Cosmetics | Project ELLA Demo | Not for production use</p>
+        <p>Chris Cosmetics | Project BELLA Demo | Not for production use</p>
       </footer>
     </main>
   );
